@@ -22,4 +22,4 @@ https://rapidapi.com/apidojo/api/shazam/playground
 
 #### GIF
 
- <img src=""/>
+ <img src="./images/spotify.gif"/>
