@@ -1,5 +1,5 @@
 import { renderSearchMusic, renderSongs } from "./ui.js";
-//*ınputa girilen veriye göre aratacağımız api key.
+//  api key
 const options = {
   method: "GET",
   headers: {
@@ -7,7 +7,7 @@ const options = {
     "x-rapidapi-host": "shazam.p.rapidapi.com",
   },
 };
-//*popüler müzikleri getireceğimiz api key.
+//*popüler müzikler icin api key
 const optionsTop = {
   method: "GET",
   headers: {
@@ -21,7 +21,7 @@ export class API {
     this.song = [];
   }
 
-  //*ınputa girilen veriye göre apiden cevabı getirir.
+  // apiden cevabı getirir.
   async searchMusic(query) {
     try {
       const res = await fetch(
@@ -32,7 +32,7 @@ export class API {
       let newData = data.tracks.hits;
       newData = newData.map((song) => ({ ...song.track }));
       this.songs = newData;
-      //*ekrana apiden gelen her bir şarkıyı yazdıracağımız metot.
+      //apiden gelen cevabi ekrana yazdirma
       renderSearchMusic(this.songs);
     } catch (err) {
       console.log(err);
@@ -44,11 +44,11 @@ export class API {
       "https://spotify23.p.rapidapi.com/recommendations/?limit=20&seed_tracks=0c6xIDDpzE81m2q797ordA&seed_artists=4NHQUGzhtTLFvgF5SZesLK&seed_genres=classical%2Ccountry";
 
     try {
-      //*apiye fetch isteği at
+      // fetch isteği
       const response = await fetch(url, optionsTop);
-      //*veriyi json formatına çevir
+      //json'a çevirme
       const result = await response.json();
-      //*tanımladığımız song dizisine gelen cevaı aktar.
+      //song dizisine gelen cevaı aktarma
       this.songs = result.tracks;
       renderSongs(this.songs);
     } catch (error) {

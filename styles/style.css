@@ -137,7 +137,7 @@ a:hover {
 .home {
   margin-left: 200px;
   padding: 20px;
-  padding-top: 70px; /* header yüksekliği kadar boşluk bırak */
+  padding-top: 70px;
   flex-grow: 1;
 }
 
@@ -381,4 +381,4 @@ header form ul li:hover {
 .container .splide__list .songs-card figure .play:hover {
   scale: 1.2s;
   background: #159845;
-} /*# sourceMappingURL=style.css.map */
+}

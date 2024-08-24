@@ -1,11 +1,11 @@
 import { elements } from "./helpers.js";
-//* Ekrana gönderilen müzikleri aktarır.
+//Ekrana gönderilen müzikleri aktarır.
 export const renderSearchMusic = (songs) => {
   elements.list.innerHTML = "";
   songs.forEach((song) => {
     console.log(song);
     const div = document.createElement("div");
-    //* Kart datasına kart elemanına bazı verileri ekleme
+    //Kart datasına bazı verileri ekleme
     div.dataset.url = song.hub.actions.pop().uri;
     console.log(song);
     div.dataset.title = song.title;
@@ -30,11 +30,11 @@ export const renderSearchMusic = (songs) => {
     elements.list.appendChild(div);
   });
 };
-//* Başlığı aldığı parametreye göre günceller
+//Başlığı günceller
 export const updateTitle = (message) => {
   elements.title.textContent = message;
 };
-//* Popüler müzikleri ekrana yazdırır.
+//Popüler müzikleri ekrana basar
 export const renderSongs = (songs) => {
   elements.list.innerHTML = "";
   songs.forEach((song) => {
@@ -60,7 +60,7 @@ export const renderSongs = (songs) => {
     elements.list.appendChild(div);
   });
 };
-//* Playinginfo kısmına resmi ve titlea aktardık.
+//* Playinginfo'ya  resmi ve baslik aktarir
 export const renderPlayingInfo = (song) => {
   console.log(song);
   console.log(elements.playingInfo);
